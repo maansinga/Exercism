@@ -1,33 +1,65 @@
-fn is_prime(x: &u64, primes: &mut Vec<u64>) -> bool {
-    if primes
-        .iter()
-        .map(|p| x % *p == 0)
-        .fold(false,|accum, cur| accum || cur)
-    {
-        false
-    }else{
-        primes.push(x.clone());
-        true
-    }
-}
+fn gather_primes_under(n: u64) ->Vec<u64>{
+    let mut num = n;
 
-pub fn factors(n: u64) -> Vec<u64> {
-    let mut divn = n;
     let mut primes: Vec<u64> = Vec::new();
-    primes.push(2u64);
+    primes.push(2);
 
-    let mut primes_iter = (1..).filter(|x| is_prime(x, &mut primes));
+    let mut prime_factors: Vec<u64> = Vec::new();
 
-    let mut dispatch_vec: Vec<u64> = Vec::new();
-    let mut prime = primes_iter.next().unwrap();
-    while divn > 1 {
-        if divn % prime == 0{
-            dispatch_vec.push(prime.clone());
-            divn = divn/prime;
+    while(num > 1){
+        let last_prime = primes.last().unwrap();
+        if *last_prime > num{
+            break;
+        }
+        if num % last_prime == 0{
+            prime_factors.push(last_prime.clone());
+            num = num / last_prime;
         }else{
-            prime = primes_iter.next().unwrap();
+            //find next prime
+            let next_prime = (*last_prime+1..)
+                .filter(|np| {
+                    primes
+                        .iter()
+                        .all(|p| np % p != 0)
+                })
+                .next()
+                .unwrap();
+
+            primes.push(next_prime.clone());
+            if next_prime > num/2{
+                prime_factors.push(num.clone());
+                break;
+            }
         }
     }
 
-    dispatch_vec
+
+    prime_factors
+}
+
+pub fn factors(n: u64) -> Vec<u64> {
+//    let primes = primes_under(n);
+//    let mut n_factors: Vec<u64> = Vec::new();
+//    let mut ntest = n;
+//
+//    // unless the remainder of all factorizations is 0
+//    //     if the top prime number is less than current number
+//    //      search for primes halfway up to the number
+//    //
+//    //     for all the prime numbers in primes
+//    //      check if anyone is a prime factor
+//    //      if anyone is prime factor
+//    //          divide the number by that prime number and repeat
+//
+//
+//
+//    for k in primes{
+//        while ntest % k == 0{
+//            n_factors.push(k.clone());
+//            ntest = ntest / k;
+//        }
+//    }
+//
+//    n_factors
+    gather_primes_under(n)
 }
