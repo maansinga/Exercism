@@ -4,13 +4,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76f645ee-c137-4964-8084-e82bf96332df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../prime-factors/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prime-factors/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../prime-factors/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prime-factors/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../prime-factors/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prime-factors/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../prime-factors/src/lib.rs" afterDir="false" />
-    </list>
+    <list default="true" id="76f645ee-c137-4964-8084-e82bf96332df" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lib.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="473">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="e#114#115#0" expanded="true" />
                 <element signature="e#144#145#0" expanded="true" />
@@ -183,7 +177,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -230,8 +223,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="473">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="e#114#115#0" expanded="true" />
             <element signature="e#144#145#0" expanded="true" />
