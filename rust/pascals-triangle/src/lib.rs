@@ -6,13 +6,12 @@ impl PascalsTriangle {
     }
 
     pub fn rows(&self) -> Vec<Vec<u32>> {
-        match self.0{
+        match self.0 {
             0 => vec![],
             1 => vec![vec![1]],
-            2 => vec![vec![1], vec![1,1]],
-            _ =>{
-                let mut pt2: Vec<Vec<u32>> = vec![vec![1], vec![1,1]];
-                for _ in 2..self.0{
+            _ => {
+                let mut pt2: Vec<Vec<u32>> = vec![vec![1]];
+                for _ in 1..self.0 {
                     let last = pt2.last().unwrap();
                     let mut new = vec![0];
                     new.extend(last.iter());
@@ -22,8 +21,8 @@ impl PascalsTriangle {
                             new
                                 .windows(2)
                                 .map(|pair| {
-                                    match pair{
-                                        &[x, y] => x+y,
+                                    match pair {
+                                        &[x, y] => x + y,
                                         _ => panic!("This can never happen: Any other scenario")
                                     }
                                 })
