@@ -2,16 +2,20 @@ use std::collections::HashSet;
 
 /// Determine whether a sentence is a pangram.
 pub fn is_pangram(sentence: &str) -> bool {
-    let mut punch_card: HashSet<char> = HashSet::from(
+    let punch_card: HashSet<char> = HashSet::from(
         "abcdefghijklmnopqrstuvwxyz"
             .chars()
             .clone()
             .collect()
     );
 
-    for x in sentence.to_ascii_lowercase().chars() {
-        punch_card.remove(&x);
-    }
+    let sentence_set: HashSet<char> = HashSet::from(
+        sentence
+            .to_ascii_lowercase()
+            .chars()
+            .clone()
+            .collect()
+    );
 
-    punch_card.is_empty()
+    punch_card.is_subset(&sentence_set)
 }
